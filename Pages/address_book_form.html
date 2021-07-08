@@ -6,20 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap ">
         <link rel="stylesheet" href="\css\address_book_form.css">
-        <script type="text/javascript"  src="\js\address_book_form.js"></script>
-        <script type="text/javascript"  src="\js\address_book_events.js"></script>
+        <script defer src="/Js/address_book.js"></script>
+        <script defer src="/Js/address_book_form.js"></script>
         <title>Address Book Form</title>
         <title>Document</title>
     </head>
     <body>
         <!--------------------UC1---------------------->
         <header class="header-content header">
-            <div class="logo content">
-                <img class= "img-logo" src="\asserts\logo.png" alt="">
+            <div class="logo content" >
+                <img class= "img-logo" style="float:left" src="\asserts\logo.png" alt="">
             </div>
             <div >
-                <span class="add-text">ADDRESS</span><br>
-                <span class="add-text add-book" >BOOK</span>
+                <span class="add-text" style="float:left">ADDRESS</span><br>
+                <span class="add-text add-book" style="float:left" >BOOK</span>
             </div>
         </header>
     
@@ -34,7 +34,7 @@
         
             <center>
             <div class="row-content main-div">
-                <form action="#" onsubmit="save(event)" onreset="resetForm()">
+                <form action="#" onreset="resetForm()" onsubmit="save()  ; return false">
                 <label class="label text name-field" for="name"
                 >Full Name</label>
                 <br>       
@@ -46,7 +46,7 @@
                 <br>
                 <div class="row-content butttonContent"><!---UC4 Validation perform for address-->
                     <label class="label text address-field"  for="Notes">Address</label> <br>
-                    <input placeholder="Enter your address" id="address" type="text-area" pattern="^[#.0-9a-zA-Z\s,-]+$"
+                    <input placeholder="Enter your address" id="address" name="address" type="text-area" pattern="^[#.0-9a-zA-Z\s,-]+$"
                     title="invalid Assress formate " class="input-address"></textarea>
                 </div>
                 <br>
@@ -115,7 +115,7 @@
                         <div style="-ms-flex: 1; 
                             flex: 1;">
                             <label class="label text zip-field" for="name">Zip Code</label>            
-                            <input class="input" type="numeric" id="number" name="number"
+                            <input class="input" type="numeric" id="zip" name="zip"
                             placeholder="Enter Your Zip code" required>
                             <error-output class="text-error" for="text"></error-output>
                         </div>
@@ -123,7 +123,7 @@
                             
                 <div class="row-content">
                     <label class="label text phone-field" for="name">Phone number</label>   <!---UC4 Validation perform for phone number-->   
-                    <input class="input" type="numeric" id="phonenumber" pattern="^[6-9]\d{9}$" title="Phone number is invalid "name="number"
+                    <input class="input" type="numeric" id="phone" name="phone" pattern="^[6-9]\d{9}$" title="Phone number is invalid "
                     placeholder="Enter Your phone number" required>
                     <error-output class="text-error" for="text"></error-output>
                 </div>
@@ -140,4 +140,6 @@
             </center>
         </div>  
     </body>
+     
+   
 </html>

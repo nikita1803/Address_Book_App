@@ -1,9 +1,15 @@
 /**
  * UC3 Added person in address book table using template literal.
  */
+
 window.addEventListener('DOMContentLoaded', (event) => {
     createInnerHtml();
 });
+
+const getContactDetailsFromSotage = () =>{
+    return localStorage.getItem("ContactList") ?
+        JSON.parse(localStorage.getItem("ContactList")) : [];
+}
 
 const createInnerHtml = () => {
 

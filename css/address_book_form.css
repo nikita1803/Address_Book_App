@@ -8,6 +8,7 @@ UC 1 Created css for header of address book app.
 
 .header {
             padding: 15px 0;
+            
             background-color: #ffffff;
 }
 
@@ -21,6 +22,7 @@ UC 1 Created css for header of address book app.
 .img-logo{
             height:100px;
             width:100px;
+            float:left;
 }
 
 .logo-content {
@@ -217,7 +219,7 @@ UC-3 Created a css for form feilds.
             opacity: 1;
             display: flex;margin-right:126px;margin-left:-165px;
 }
-#number{
+#zip{
             top: 735px;
             left: 1112px;
             width: 250px;
@@ -239,7 +241,7 @@ UC-3 Created a css for form feilds.
             text-transform: capitalize;
             opacity: 1;margin-left:-690px;display:flex;margin-bottom:20px;
 }
-#phonenumber{
+#phone{
             top: 478px;
             left: 554px;
             width: 808px;
