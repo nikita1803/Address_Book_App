@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             textError.textContent = e;
         }
     });
+    
 });
 
 const save = () => {

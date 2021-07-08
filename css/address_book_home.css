@@ -1,0 +1,56 @@
+/**
+*UC1 CSS  to create a header of the address book home page.
+*/
+body
+{
+    margin:0;
+    height: 100%;
+}
+
+.header
+{
+    padding: 15px 0;
+    background-color: white;
+}
+
+.header-content
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-content
+{
+    display: flex;
+    flex-direction: row;
+    width:80%;
+    align-items: center;
+}
+
+.logo-content-img
+{
+    border : solid 8px #0d0e0f;
+    height : 10%;
+}
+
+.addbook-text
+{
+    font: normal normal bold 15px/25px Montserrat;
+    font-family: "Montserrat",sans-serif;
+    text-transform: capitalize;
+    flex-direction: row;
+    letter-spacing: 0px;
+    margin:-1020px;
+    color: blue;
+}
+.address-book
+{
+    color: #546677;
+    flex-direction: row;
+    padding: 0px;
+    margin :-1020px;
+}
+
+*{box-sizing: border-box;}
