@@ -91,7 +91,9 @@ function createAndUpdateStorage (addressBookForm){
     alert(contactList.toString());
     localStorage.setItem("ContactList",JSON.stringify(contactList));
 }
-
+/**
+ * UC9 reset form event is created
+ */
 const resetForm = ()=>{
     document.querySelector("#name").value = "";
     document.querySelector('#address').value= "";
