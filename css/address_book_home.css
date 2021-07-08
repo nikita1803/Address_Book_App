@@ -42,7 +42,7 @@ body
     text-transform: capitalize;
     flex-direction: row;
     letter-spacing: 0px;
-    margin:-1020px;
+    margin:-1030px;
     color: blue;
 }
 .address-book
@@ -50,7 +50,55 @@ body
     color: #546677;
     flex-direction: row;
     padding: 0px;
-    margin :-1020px;
+    margin :-1030px;
 }
 
 *{box-sizing: border-box;}
+
+/**
+* UC-2 Css to create Content Header
+*/
+
+.main-content
+{
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh-80px);
+    padding: 25px 0 10px;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+}
+
+.header-content
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    align-items: center;
+}
+ 
+.contact-text
+{
+    font: normal normal bold 24px/25px Roboto;
+    letter-spacing: 0px;
+    opacity: 1;
+    color: #42515f;
+}
+
+.add-button
+{
+    font: normal normal normal 22px/29px Roboto;
+    letter-spacing: 0px;
+    opacity: 1;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    cursor: pointer;
+    background:blue 0% 0% no-repeat padding-box;
+    color: #ffffff;
+}
