@@ -33,3 +33,26 @@ const createInnerHtml = () => {
 }
 document.querySelector('#table-display').innerHTML = innerHtml;
 }
+
+/**
+ * UC5 to delete the data from the home page.
+ * @param {*} node 
+ * @returns 
+ */
+const remove = (node) => {
+   
+    let addressBookData = contactList.find(addData => addData._id == node.id);
+    if (!addressBookData) return;
+    
+    const index = contactList
+    
+            .map(addData => addData._id)
+    
+            .indexOf(addressBookData._id);
+    
+    contactList.splice(index, 1);
+    
+    localStorage.setItem("AddressBookList", JSON.stringify (contactList));
+    
+    createInnerHtml();
+}
