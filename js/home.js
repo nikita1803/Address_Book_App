@@ -1,8 +1,6 @@
-/**
- * UC3 Added person in address book table using template literal.
- */
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener("DOMContentLoaded", (event) => {
+    contactList = getContactDetailsFromSotage();
     createInnerHtml();
 });
 
@@ -11,47 +9,27 @@ const getContactDetailsFromSotage = () =>{
         JSON.parse(localStorage.getItem("ContactList")) : [];
 }
 
+//Template literal ES6 feature
 const createInnerHtml = () => {
-
-    const headerHtml = "<th>Name</th><th>Address</th><th>City</th>"+"<th>State</th><th>Zip</th><th>Phone number</th><th>Action</th>";
-    let addressBook = creteAddressBookJSON()[0];
-    const innerHtml = `${headerHtml}
-    
-    <tr>
-        <td>${addressBook._name}</td> I
-        
-        <td>${addressBook._address}</td>
-        
-        <td><div class='dept-label'>${addressBook._city}</div></td>
-        
-        <td>${addressBook._state}</td>
-        
-        <td>${addressBook._zip}</td>
-        
-        <td>${addressBook._phonenumber}</td>
-        
-        <td><img name="1" onclick="remove(this)" src="/asserts/icons/delete-black-18dp.svg" alt="delete">
-        
-        <img name="1" onclick="update(this)" src="/asserts/icons/create-black-18dp.svg" alt="edit"> 
-        </td>
-    
-    </tr>
-`;
-    document.querySelector('#table-display').innerHTML = innerHtml;
-    
+    const headerHtml =
+        "<tr><th>Fullname</th><th>Address</th><th>City</th><th>State</th><th>Zip Code</th><th>PhoneNumber</th><th>Actions</th></tr>";
+ // let contactList = createContactDetailsJSON();
+  let innerHtml = `${headerHtml}`;
+  for(const contact of contactList){
+     innerHtml = `${innerHtml}
+     <tr>
+           <td>${contact._name}</td>
+             <td>${contact._address}</td>
+             <td>${contact._city}</td>
+             <td>${contact._state}</td>
+             <td>${contact._zip}</td>
+             <td>${contact._phoneNumber}</td>
+             <td>
+                 <img id="${contact._id}" onclick="remove(this)"  src="/asserts/icons/delete-black-18dp.svg">
+                 <img id="${contact._id}" onclick="update(this)"  src="/asserts/icons/create-black-18dp.svg">
+             </td>
+         </tr>
+     `;
 }
-const creteAddressBookJSON = () => { 
-    let addressBookListLocal = [
-    {
-
-        _name: 'Nikita rai',
-        _address: 'Ansal',
-        _city: 'Lucknow',
-        _state: 'UP',
-        _zip: '226016',
-        _phonenumber: '9599237376',
-    
-    }, 
- ];  
-    return addressBookListLocal;
+document.querySelector('#table-display').innerHTML = innerHtml;
 }
